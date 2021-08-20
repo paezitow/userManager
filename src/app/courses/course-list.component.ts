@@ -9,11 +9,22 @@ import { Course } from './course';
 
 export class CourseListComponent implements OnInit{
 
-    courses: Course[] = [];
+    filteredCourses: Course[] = [];
+    _courses: Course[] = [];
+    _filterBy!: String;
 
     constructor (private CourseService: CourseService){}
 
     ngOnInit(): void{
-        this.courses  = this.CourseService.retrievAll();
+        this._courses  = this.CourseService.retrievAll();
     }
+
+    set filter (value: String){
+        this._filterBy = value;
+    }
+
+    get filter(){
+        return this._filterBy;
+    }
+
 }
