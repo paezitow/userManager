@@ -9,7 +9,7 @@ export class CourseService {
     retrievAll(): Course[] {
         return COURSES;
     }
-    
+
 }
 
 var COURSES: Course[] = [
